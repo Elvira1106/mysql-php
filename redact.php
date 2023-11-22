@@ -21,7 +21,7 @@ unset($_SESSION['text']);
 $arr = []; 
 $mysql = new mysqli("localhost", "root", "", "bd_test");
 $count = $mysql->query("SELECT * FROM user");
-while($row = $count->fetch_assoc()) //записали в массив все id строк
+while($row = $count->fetch_assoc()) //записали в массив все id строк.
 {
    array_push($arr, $row['name']);
 }
