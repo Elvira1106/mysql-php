@@ -16,4 +16,9 @@ unset($_SESSION['pass']);
 unset($_SESSION['bio']);
 unset($_SESSION['sub']);
 unset($_SESSION['des']);
+unset($_SESSION['subj']);
+unset($_SESSION['message']);
+unset($_SESSION['class']);
+unset($_SESSION['succ_mes']);
+unset($_SESSION['user_name']);
 ?>
