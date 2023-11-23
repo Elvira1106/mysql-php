@@ -7,6 +7,9 @@ unset($_SESSION['error_sub']);
 unset($_SESSION['error_mes']);
 unset($_SESSION['error_user']);
 unset($_SESSION['success_mes']);
+unset($_SESSION['course_sub']);
+unset($_SESSION['empty']);
+unset($_SESSION['succ_mes']);
 ?>
 <div class="container mt2"> <!--отступ 2 сверху и выравнивание посередине-->
     <h1> Пользователь </h1>
