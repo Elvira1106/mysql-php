@@ -7,6 +7,9 @@ unset($_SESSION['error_email']);
 unset($_SESSION['error_parol']);
 unset($_SESSION['error_bio']);
 unset($_SESSION['text']);
+unset($_SESSION['course_sub']);
+unset($_SESSION['empty']);
+unset($_SESSION['succ_mes']);
 ?>
 <h1 class = "mt-5"> <?=$title?> </h1>
 <form >

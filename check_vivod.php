@@ -3,26 +3,19 @@ session_start();
 ob_start();
 
 //удаляем все ненужное перед отправить
-unset($_SESSION['clas']);
-unset($_SESSION['text']);
-unset($_SESSION['error_username']);
-unset($_SESSION['error_email']);
-unset($_SESSION['error_parol']);
-unset($_SESSION['error_bio']);
-unset($_SESSION['error_sub']);
-unset($_SESSION['error_mes']);
-unset($_SESSION['error_user']);
-unset($_SESSION['success_mes']);
-
+unset($_SESSION['empty']);
+unset($_SESSION['error_us']);
+unset($_SESSION['succ_mes']);
 
 $subj = $_POST['course_sub'];
+$_SESSION['course_sub'] = $subj;
 function redirect() { //переадресация
     header('Location: http://localhost:3000/mysql%20+%20php/redact.php');
     exit;
 }
 
-if ($subj == 'Select' ) {
-    $_SESSION['subj_error'] = "Не выбрана тема";
+if ($_SESSION['course_sub']== "Выберете свою тему сообщения") {
+    $_SESSION['empty'] = "Не выбрана тема";
     redirect();
 } else {
     
@@ -33,9 +26,10 @@ if ($subj == 'Select' ) {
     $subject = $res1->fetch_array()['0'] ?? ''; //достаем нужный id пользователя из массива
     $user = $res3->fetch_array()['0'] ?? '';
     $mes = $res2->fetch_array()['0'] ?? '';
-    if ($mysql->query("INSERT INTO `message` (`subject`, `descroption`, `user_id_user`) VALUES ('$subject', '$mes', $user)")) {
+    if ($subject && $user && $mes) {
         $_SESSION['subj'] =  $subject;
         $_SESSION['message'] =  $mes;
+        $_SESSION['course_sub'] = $subj;
         $res4 = $mysql->query("SELECT `name` from user, message
         where user.id_user = message.user_id_user and
         user_id_user = $user

@@ -14,6 +14,9 @@ unset($_SESSION['error_sub']);
 unset($_SESSION['error_mes']);
 unset($_SESSION['error_user']);
 unset($_SESSION['success_mes']);
+unset($_SESSION['course_sub']);
+unset($_SESSION['empty']);
+unset($_SESSION['succ_mes']);
 ?>
 <h2 align="center" style="color:Black"> <?=$title?> </h2>
 <img src = https://klike.net/uploads/posts/2022-08/1661254766_j-131.jpg />

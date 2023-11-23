@@ -21,4 +21,6 @@ unset($_SESSION['message']);
 unset($_SESSION['class']);
 unset($_SESSION['succ_mes']);
 unset($_SESSION['user_name']);
+unset($_SESSION['empty']);
+$_SESSION['course_sub'] = "Выберете свою тему сообщения";
 ?>
